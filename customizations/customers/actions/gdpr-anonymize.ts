@@ -28,7 +28,7 @@ export default (collection: CollectionCustomizer<Schema, 'customer'>) =>
           last_name: 'gdpr_anonymized',
           email: 'gdpr_anonymized',
           company: 'gdpr_anonymized',
-          birthday: null,
+          birthday: 'gdpr_anonymized',
         });
 
         return resultBuilder.success('Customers successfully anonymized!');

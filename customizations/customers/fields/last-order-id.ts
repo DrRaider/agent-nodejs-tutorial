@@ -22,6 +22,8 @@ export default (collection: CollectionCustomizer<Schema, 'customer'>) =>
         });
       },
     })
+    // addField doesn't add the operators so we need to add them manually to allow filtering/sorting/searching
+    // addManyToOne need the in operator to work
     .replaceFieldOperator('last_order_id', 'In', async (lastOrderIds, context) => {
       const orders = await context.dataSource.getCollection('order')
         .list(
